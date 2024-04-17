@@ -22,6 +22,16 @@ if ($result->num_rows > 0) {
         $empleados[] = $row;
     }
 }
+
+// Поиск по имени
+if (isset($_POST['buscar'])) {
+    $search = $_POST['buscar'];
+    $filteredEmpleados = array_filter($empleados, function ($empleado) use ($search) {
+        return stripos($empleado['NombreCompleto'], $search) !== false;
+    });
+} else {
+    $filteredEmpleados = $empleados;
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,62 +40,19 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel principal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #007bff;
-            color: #fff;
-        }
-        .center {
-            text-align: center;
-        }
-        .button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
 </head>
 <body>
     <div class="container">
         <h1>Добро пожаловать, <?php echo $_SESSION['username']; ?>!</h1>
-       
+        
+
+        <form method="post" action="">
+            <input type="text" name="buscar" placeholder="Buscar por nombre">
+            <button type="submit">Buscar</button>
+        </form>
+        
         <table>
             <thead>
                 <tr>
@@ -94,11 +61,10 @@ if ($result->num_rows > 0) {
                     <th>Fecha nacimiento</th>
                     <th>Nacionalidad</th>
                     <th>Educación</th>
-                    <!-- Добавьте другие необходимые заголовки столбцов -->
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($empleados as $empleado): ?>
+                <?php foreach ($filteredEmpleados as $empleado): ?>
                     <tr>
                         <td><?php echo $empleado['ID_Empleado']; ?></td>
                         <td><?php echo $empleado['NombreCompleto']; ?></td>
@@ -110,6 +76,8 @@ if ($result->num_rows > 0) {
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <br>
+        <a href="logout.php" class="button">Salir</a>
     </div>
 </body>
 </html>
