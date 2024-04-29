@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Проверяем аутентификацию пользователя
     if (check_login($conn, $username, $password)) {
+        $_SESSION['username'] = $username; // Сохраняем имя пользователя в сессии
         // Перенаправляем пользователя на главную страницу
         header('Location: index.php');
         exit();
@@ -97,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container">
-        <h1>Iniciar sesión</h1>
+       
         <?php if (isset($error)): ?>
             <p class="error"><?php echo $error; ?></p>
         <?php endif; ?>

@@ -1,77 +1,24 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+.container-fluid {
+    height: 100px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.sidebar {
+    left: 0;
+    top: 0;
+    height: 100%; 
+    width: 15%;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    z-index: 1; 
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    padding: 8px;
-    width: 200px;
-}
-
-button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
+.sidebar a {
     padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
+    display: block;
+    color: #000;
     text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #0056b3;
+.sidebar a:hover {
+    background-color: #dee2e6;
 }

@@ -24,6 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Redireccionar de vuelta a la página de detalles del empleado después de la actualización
-header("Location: edicion.php?id=$id_empleado");
+header("Location: empleado.php?id=$id_empleado");
 exit();
 ?>
