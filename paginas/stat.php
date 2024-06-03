@@ -47,7 +47,7 @@ $total_rows = $total_rows_data['total'];
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item py-2">
-                            <a class="nav-link active" href="index.php">
+                            <a class="nav-link active" href="../index.php">
                                 Inicio
                             </a>
                         </li>

@@ -1,0 +1,7 @@
+{
+    "name": "my-php-app",
+    "description": "My PHP App on Heroku",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    }
+}
