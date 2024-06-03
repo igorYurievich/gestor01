@@ -1,5 +1,4 @@
 <?php
-
-echo "Funciona";
-
+header('Location: ./paginas/index.php');
+exit();
 ?>
