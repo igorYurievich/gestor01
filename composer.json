@@ -1,7 +1,14 @@
 {
-    "name": "my-php-app",
-    "description": "My PHP App on Heroku",
+    "name": "gestor/gestor",
+    "description": "Gestor de empleados",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Igor",
+            "email": "igoryurievich1@gmail.com"
+        }
+    ],
     "require": {
-        "php": "^7.4 || ^8.0"
+        "php": "^8.2.12"
     }
 }
