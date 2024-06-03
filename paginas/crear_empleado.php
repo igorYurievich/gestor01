@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include './conexion.php';
 
 session_start();
 
@@ -173,7 +173,7 @@ $result_niveles = $conn->query($sql_niveles)->fetch_all(MYSQLI_ASSOC);
                 <button type="button" class="btn btn-secondary" id="add-idioma">Agregar Idioma</button>
             </div>
             <button type="submit" class="btn btn-primary" id="crear-empleado" disabled>Crear Empleado</button>
-            <a href="stat.php" class="btn btn-secondary">Volver</a>
+            <a href="./stat.php" class="btn btn-secondary">Volver</a>
         </form>
     </div>
     <script>

@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include './conexion.php';
 
 session_start();
 
@@ -95,7 +95,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                    <a href="empleado.php?id=<?php echo $id_empleado; ?>" class="btn btn-secondary">Volver</a>
+                    <a href="./empleado.php?id=<?php echo $id_empleado; ?>" class="btn btn-secondary">Volver</a>
                 </form>
             </div>
         </div>

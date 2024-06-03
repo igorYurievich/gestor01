@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include './conexion.php';
 
 session_start();
 
@@ -27,8 +27,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         $mensaje = "Error al eliminar el empleado: " . $conn->error;
     }
 
-    header('Location: index.php?mensaje=' . urlencode($mensaje));
+    header('Location: stat.php?mensaje=' . urlencode($mensaje));
 } else {
-    header('Location: index.php?mensaje=' . urlencode("No se ha proporcionado un ID de empleado."));
+    header('Location: stat.php?mensaje=' . urlencode("No se ha proporcionado un ID de empleado."));
 }
 ?>
