@@ -19,3 +19,6 @@ echo "Connected successfully";
 // Закрытие соединения (если оно больше не нужно)
 $conn->close();
 ?>
+
+
+
