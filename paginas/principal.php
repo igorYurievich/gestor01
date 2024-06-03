@@ -1,5 +1,5 @@
 <?php
-session_start(); // Asegúrate de iniciar la sesión
+session_start();
 
 include 'conexion.php';
 
@@ -7,9 +7,7 @@ if (!isset($_SESSION['username'])) {
     header('Location: login.php');
     exit();
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -21,10 +19,45 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="estilo_stat.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @media (max-width: 767px) {
+            .sidebar-top {
+                position: relative;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
+            <nav class="col-12 d-md-none bg-light sidebar-top">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item py-2">
+                            <a class="nav-link active" href="principal.php">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link" href="crear_empleado.php">
+                                Crear empleado
+                            </a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link" href="stat.php">
+                                Empleados
+                            </a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link text-danger" href="logout.php">
+                                Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
@@ -51,12 +84,8 @@ if (!isset($_SESSION['username'])) {
                     </ul>
                 </div>
             </nav>
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                <h2>Inicio</h2>
+            <main class="col-md-9 ml-sm-auto col-lg-10 py-4">
                 <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- Contenedor Vacío -->
-                    </div>
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             <div class="inner">
@@ -80,13 +109,13 @@ if (!isset($_SESSION['username'])) {
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
+                <div class="row py-4">
+                    <div class="col-lg-6 d-flex justify-content-center">
                         <div id="myChartContainer">
                             <canvas id="myChart" width="320" height="320"></canvas>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 d-flex justify-content-center">
                         <div id="myBarChartContainer">
                             <canvas id="myBarChart" width="320" height="320"></canvas>
                         </div>

@@ -172,8 +172,10 @@ $result_niveles = $conn->query($sql_niveles)->fetch_all(MYSQLI_ASSOC);
                 </div>
                 <button type="button" class="btn btn-secondary" id="add-idioma">Agregar Idioma</button>
             </div>
+            <div class="my-2">
             <button type="submit" class="btn btn-primary" id="crear-empleado" disabled>Crear Empleado</button>
             <a href="./stat.php" class="btn btn-secondary">Volver</a>
+            </div>
         </form>
     </div>
     <script>

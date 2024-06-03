@@ -127,7 +127,7 @@ $row_empleado = $result_empleado->fetch_assoc();
                         <a href="<?php echo $editar_url . '?id=' . $id_empleado; ?>" class="btn btn-secondary">Editar</a>
                         <a href="<?php echo $editar_idiomas_url . '?id=' . $id_empleado; ?>" class="btn btn-secondary">Editar idiomas</a>
                         <?php if ($username === 'admin'): ?>
-                            <a href=".eliminar_empleado.php?id=<?php echo $id_empleado; ?>" class="btn btn-danger" onclick="return confirm('¿Está seguro de que desea eliminar este empleado?');">Eliminar</a>
+                            <a href="eliminar_empleado.php?id=<?php echo $id_empleado; ?>" class="btn btn-danger" onclick="return confirm('¿Está seguro de que desea eliminar este empleado?');">Eliminar</a>
                         <?php endif; ?>
                     </div>
                 </div>

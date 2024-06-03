@@ -30,14 +30,16 @@ if (isset($_POST['export_pdf'])) {
             $result_empleado = $stmt->get_result();
             $row_empleado = $result_empleado->fetch_assoc();
 
-            // Mostrar datos del empleado
+            // Mostrar datos del empleado, excepto el id_empleado
             foreach ($row_empleado as $field_name => $field_value) {
-                $field_name = ucwords(str_replace('_', ' ', $field_name));
-                $pdf->SetFillColor(200, 220, 255); // Establecer el color de fondo
-                $pdf->SetTextColor(0); // Restaurar el color de texto a negro
-                $pdf->Cell(60, 10, utf8_decode($field_name), 1, 0, 'L', true);
-                $pdf->Cell(130, 10, utf8_decode($field_value), 1, 0, 'L');
-                $pdf->Ln();
+                if ($field_name !== 'id_empleado') {
+                    $field_name = ucwords(str_replace('_', ' ', $field_name));
+                    $pdf->SetFillColor(200, 220, 255); // Establecer el color de fondo
+                    $pdf->SetTextColor(0); // Restaurar el color de texto a negro
+                    $pdf->Cell(60, 10, utf8_decode($field_name), 1, 0, 'L', true);
+                    $pdf->Cell(130, 10, utf8_decode($field_value), 1, 0, 'L');
+                    $pdf->Ln();
+                }
             }
 
             // Agregar sección para los idiomas del empleado
