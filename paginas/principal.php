@@ -1,10 +1,7 @@
 <?php
 session_start(); // Asegúrate de iniciar la sesión
 
-if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
-    exit();
-}
+include 'conexion.php';
 ?>
 
 <!DOCTYPE html>
