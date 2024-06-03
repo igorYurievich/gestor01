@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($sql_actualizar) === TRUE) {
             // Redirecciona de vuelta a la página del empleado
-            header("Location: http://localhost/dwes/proyectoFinalCoreccion/paginas/empleado.php?id=$id_empleado");
+            header("Location: empleado.php?id=$id_empleado");
             exit();
         } else {
             echo "Error al actualizar los datos: " . $conn->error;
