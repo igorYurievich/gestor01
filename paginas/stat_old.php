@@ -48,7 +48,7 @@ $total_rows = $total_rows_data['total'];
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item py-2">
-                            <a class="nav-link active" href="principal.php">
+                            <a class="nav-link active" href="../index.php">
                                 Inicio
                             </a>
                         </li>
@@ -75,11 +75,7 @@ $total_rows = $total_rows_data['total'];
 
             <div class="d-flex justify-content-left">
               
-            <?php 
-            
-            
-
-            include 'filter.php'; ?>
+            <?php include 'filter.php'; ?>
               
 
                     <form action="export_pdf.php" method="post">
