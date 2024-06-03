@@ -4,6 +4,7 @@ session_start(); // Asegúrate de iniciar la sesión
 include 'conexion.php';
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
