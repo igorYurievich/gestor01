@@ -2,6 +2,12 @@
 session_start(); // Asegúrate de iniciar la sesión
 
 include 'conexion.php';
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit();
+}
+
 ?>
 
 
