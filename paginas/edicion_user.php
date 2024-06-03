@@ -95,7 +95,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                             </table>
                             <input type="hidden" name="id_empleado" value="<?php echo $id_empleado; ?>">
                             <button type="submit" class="btn btn-primary">Confirmar Cambios</button>
-                            <a href="../stat.php" class="btn btn-secondary">Volver</a>
+                            <a href="stat.php" class="btn btn-secondary">Volver</a>
                         </form>
                     </div>
                 </div>
