@@ -5,19 +5,14 @@ $password = "9a3790ed6eb9dd0";
 $database = "heroku_40fe3ccaf131604";
 $port = 3306;
 
-// Установка соединения с базой данных
+// Establecer conexión con la base de datos
 $conn = new mysqli($servername, $username, $password, $database, $port);
 
-// Проверка соединения
+// Verificar la conexión
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Успешное подключение
+// Conexión establecida con éxito
 echo "Connected successfully";
-
-// Закрытие соединения (если оно больше не нужно)
-$conn->close();
 ?>
-
-
