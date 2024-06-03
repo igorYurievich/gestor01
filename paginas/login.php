@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (check_login($conn, $username, $password)) {
         $_SESSION['username'] = $username;
         header('Location: principal.php');
-        exit();
+        exit(); // Здесь используется exit(), что закрывает скрипт после перенаправления
     } else {
         $error = "Nombre de usuario o contraseña incorrectos";
     }
