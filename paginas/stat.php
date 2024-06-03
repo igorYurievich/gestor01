@@ -71,14 +71,24 @@ $total_rows = $total_rows_data['total'];
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-                <?php include 'filter.php'; ?>
 
-                <form action="export_pdf.php" method="post">
-                    <div class="d-flex justify-content-start">
+            <div class="d-flex justify-content-left">
+              
+            <?php include 'filter.php'; ?>
+              
+
+                    <form action="export_pdf.php" method="post">
+                    
+                    <div class="mx-2">
+                            <button name="export_pdf_all" class="btn btn-success">Exportar todos los empleados a PDF</button>
+                    </div>  
+                    </form>
+
+                    <form action="pdf_seleccionados.php" method="post">
+                  
                         <button id="export_pdf_button" name="export_pdf" class="btn btn-primary mr-2" disabled>Exportar a PDF los empleados seleccionados</button>
-                        <button name="export_pdf_all" class="btn btn-success">Exportar todos los empleados a PDF</button>
                     </div>
-
+                
                     <br>
 
                     <table class="table table-striped">
