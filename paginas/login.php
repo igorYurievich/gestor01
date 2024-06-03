@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (check_login($conn, $username, $password)) {
         $_SESSION['username'] = $username;
-        header('Location: index.php');
+        header('Location: ./index.php');
         exit();
     } else {
         $error = "Nombre de usuario o contraseña incorrectos";
