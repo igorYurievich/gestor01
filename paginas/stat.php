@@ -36,40 +36,87 @@ $total_rows = $total_rows_data['total'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel principal</title>
+    <title>Panel de Navegación</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilo_stat.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @media (max-width: 767px) {
+            .sidebar-top {
+                position: relative;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        .navbar-dark {
+            background-color: #343a40 !important;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #ccc !important;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <nav class="col-12 d-md-none navbar navbar-expand-lg navbar-dark bg-dark sidebar-top">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item py-2">
                             <a class="nav-link active" href="principal.php">
-                                Inicio
+                                <i class="fas fa-home"></i> Inicio
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link" href="crear_empleado.php">
-                                Crear empleado
+                                <i class="fas fa-user-plus"></i> Crear empleado
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link" href="stat.php">
-                                Empleados
+                                <i class="fas fa-users"></i> Empleados
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link text-danger" href="logout.php">
-                                Cerrar sesión
+                                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item py-2">
+                            <a class="nav-link active" href="principal.php">
+                                <i class="fas fa-home"></i> Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link" href="crear_empleado.php">
+                                <i class="fas fa-user-plus"></i> Crear empleado
+                            </a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link" href="stat.php">
+                                <i class="fas fa-users"></i> Empleados
+                            </a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link text-danger" href="logout.php">
+                                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
 

@@ -27,6 +27,15 @@ if (!isset($_SESSION['username'])) {
                 z-index: 1;
             }
         }
+        .navbar-dark {
+            background-color: #343a40 !important;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #ccc !important;
+        }
     </style>
 </head>
 <body>
@@ -37,22 +46,22 @@ if (!isset($_SESSION['username'])) {
                     <ul class="nav flex-column">
                         <li class="nav-item py-2">
                             <a class="nav-link active" href="principal.php">
-                                Inicio
+                                <i class="fas fa-home"></i> Inicio
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link" href="crear_empleado.php">
-                                Crear empleado
+                                <i class="fas fa-user-plus"></i> Crear empleado
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link" href="stat.php">
-                                Empleados
+                                <i class="fas fa-users"></i> Empleados
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link text-danger" href="logout.php">
-                                Cerrar sesión
+                                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                             </a>
                         </li>
                     </ul>
@@ -63,22 +72,22 @@ if (!isset($_SESSION['username'])) {
                     <ul class="nav flex-column">
                         <li class="nav-item py-2">
                             <a class="nav-link active" href="principal.php">
-                                Inicio
+                                <i class="fas fa-home"></i> Inicio
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link" href="crear_empleado.php">
-                                Crear empleado
+                                <i class="fas fa-user-plus"></i> Crear empleado
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link" href="stat.php">
-                                Empleados
+                                <i class="fas fa-users"></i> Empleados
                             </a>
                         </li>
                         <li class="nav-item py-2">
                             <a class="nav-link text-danger" href="logout.php">
-                                Cerrar sesión
+                                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                             </a>
                         </li>
                     </ul>
