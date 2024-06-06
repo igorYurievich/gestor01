@@ -58,6 +58,10 @@ $row_empleado = $result_empleado->fetch_assoc();
     <td><?php echo $row_empleado['apellido2']; ?></td>
 </tr>
 <tr>
+    <td><strong>Sexo:</strong></td>
+    <td><?php echo $row_empleado['sexo']; ?></td>
+</tr>
+<tr>
     <td><strong>Correo:</strong></td>
     <td><?php echo $row_empleado['correo']; ?></td>
 </tr>

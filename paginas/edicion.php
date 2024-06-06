@@ -52,6 +52,10 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                                     <td><input type='text' name='apellido2' value='<?php echo $row['apellido2']; ?>' class='form-control'></td>
                                 </tr>
                                 <tr>
+                                    <td><strong>Sexo:</strong></td>
+                                    <td><input type='text' name='sexo' value='<?php echo $row['sexo']; ?>' class='form-control'></td>
+                                </tr>
+                                <tr>
                                     <td><strong>Correo:</strong></td>
                                     <td><input type='text' name='correo' value='<?php echo $row['correo']; ?>' class='form-control'></td>
                                 </tr>

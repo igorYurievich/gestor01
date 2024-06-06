@@ -26,9 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_nacionalidad = $_POST['id_nacionalidad'];
     $idiomas = $_POST['idiomas'];
     $niveles = $_POST['niveles'];
+    $sexo  = $_POST['sexo'];
 
-    $sql = "INSERT INTO empleado (nombre, apellido1, apellido2, correo, telefono, direccion, localidad, cp, provincia, titulo, teletrabajo, turno, requerimientos_especiales, fecha_nacimiento)
-            VALUES ('$nombre', '$apellido1', '$apellido2', '$correo', '$telefono', '$direccion', '$localidad', '$cp', '$provincia', '$titulo', '$teletrabajo', '$turno', '$requerimientos_especiales', '$fecha_nacimiento')";
+    $sql = "INSERT INTO empleado (nombre, apellido1, apellido2, correo, telefono, direccion, localidad, cp, provincia, titulo, teletrabajo, turno, requerimientos_especiales, fecha_nacimiento, sexo)
+            VALUES ('$nombre', '$apellido1', '$apellido2', '$correo', '$telefono', '$direccion', '$localidad', '$cp', '$provincia', '$titulo', '$teletrabajo', '$turno', '$requerimientos_especiales', '$fecha_nacimiento', '$sexo')";
 
     if ($conn->query($sql) === TRUE) {
         $id_empleado = $conn->insert_id;
@@ -91,6 +92,28 @@ $result_niveles = $conn->query($sql_niveles)->fetch_all(MYSQLI_ASSOC);
                 <label for="apellido2">Apellido 2:</label>
                 <input type="text" name="apellido2" class="form-control" id="apellido2">
             </div>
+            <div class="form-group">
+    <label for="sexo">Sexo:</label>
+    <select name="sexo" class="form-control" id="sexo" required>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="otro">Otro (por favor especifique)</option>
+    </select>
+    <input type="text" name="sexo_otro" class="form-control" id="sexo_otro" style="display:none;" placeholder="Especifique su género">
+</div>
+<script>
+document.getElementById('sexo').addEventListener('change', function() {
+    var otroInput = document.getElementById('sexo_otro');
+    if (this.value === 'otro') {
+        otroInput.style.display = 'block';
+        otroInput.required = true;
+    } else {
+        otroInput.style.display = 'none';
+        otroInput.required = false;
+    }
+});
+</script>
+
             <div class="form-group">
                 <label for="correo">Correo:</label>
                 <input type="email" name="correo" class="form-control" id="correo" required>
